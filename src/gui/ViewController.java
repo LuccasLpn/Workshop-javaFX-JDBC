@@ -33,7 +33,9 @@ public class ViewController implements Initializable {
     
     @FXML
     public void onMenuItemDepartmentAction(){
+        
         loadView("/gui/DepartmentList.fxml");
+        
     }      
     
     @FXML
