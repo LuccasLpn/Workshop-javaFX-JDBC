@@ -1,3 +1,5 @@
+package application;
+
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -7,7 +9,11 @@ import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+    
+    
+    
+    private static Scene mainscene;
+    
     @Override
     public void start(Stage primaryStage) {
         
@@ -16,8 +22,10 @@ public class Main extends Application {
             ScrollPane scrollpane = loader.load();     
             scrollpane.setFitToHeight(true);
             scrollpane.setFitToWidth(true);
-            Scene mainScene = new Scene(scrollpane);
-            primaryStage.setScene(mainScene);
+            
+            mainscene = new Scene(scrollpane);
+            
+            primaryStage.setScene(mainscene);
             primaryStage.setTitle("Sample JavaFX application");
             primaryStage.show();
             
@@ -28,6 +36,10 @@ public class Main extends Application {
             e.printStackTrace();
             
         }
+    }
+    
+    public static Scene getMainScene(){
+        return mainscene;
     }
 
     public static void main(String[] args) {
