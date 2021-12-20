@@ -1,6 +1,7 @@
 package gui;
 
 import application.Main;
+import gui.Controllers.DepartmentFormController;
 import gui.util.Alerts;
 import gui.util.Utils;
 import java.io.IOException;
@@ -53,7 +54,8 @@ public class DepartmentListController implements Initializable{
     @FXML
     public void onBtNewAction(ActionEvent event){
         Stage parentStage = Utils.currentStage(event);
-        createDialogForm("/gui/DepartmentForm.fxml", parentStage);
+        Department obj = new Department();
+        createDialogForm(obj, "/gui/DepartmentForm.fxml", parentStage);
     }
 
     public void setDepartementeService(DepartmenteService service){
@@ -91,12 +93,16 @@ public class DepartmentListController implements Initializable{
         
     }
     
-    private void createDialogForm(String absoluteName, Stage parentStage){
+    private void createDialogForm(Department obj, String absoluteName, Stage parentStage){
         
         try {
             
             FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = loader.load();
+            DepartmentFormController controller = loader.getController();
+            controller.setDepartment(obj);
+            controller.updateFormData();
+            
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Enter Departmente Data");
             dialogStage.setScene(new Scene(pane));
