@@ -5,47 +5,47 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="388.0" prefWidth="440.0" styleClass="bodybg" stylesheets="@../Background/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepartmentListController">
+<VBox prefHeight="339.0" prefWidth="444.0" styleClass="bodybg" stylesheets="@../Background/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepartmentListController">
     <children>
-      <VBox styleClass="bodybg" stylesheets="@../Background/style.css" VBox.vgrow="NEVER">
+      <AnchorPane prefHeight="31.0" prefWidth="302.0">
          <children>
-              <Label prefHeight="25.0" prefWidth="321.0" text="Department Registration" textFill="#f80606">
+              <Label layoutX="109.0" layoutY="1.0" prefHeight="30.0" prefWidth="335.0" text="Department Registration" textFill="#f80606">
                   <font>
-                      <Font name="System Bold" size="14.0" />
+                      <Font name="System Bold" size="16.0" />
                   </font>
                   <padding>
                       <Insets left="120.0" top="5.0" />
                   </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
               </Label>
          </children>
-      </VBox>
-        <ToolBar prefHeight="40.0" prefWidth="200.0" styleClass="bodybg" stylesheets="@../Background/style.css">
-            <items>
-                <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" text=" New Department">
+      </AnchorPane>
+      <VBox styleClass="bodybg" stylesheets="@../Background/style.css" VBox.vgrow="NEVER" />
+        <TableView fx:id="tableViewDepartment" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;">
+            <columns>
+                <TableColumn fx:id="tableColumnId" prefWidth="90.0" text="Id" />
+                <TableColumn fx:id="tableColumnName" minWidth="0.0" prefWidth="116.0" text="Name" />
+            <TableColumn fx:id="tableColumnEDIT" prefWidth="117.0" />
+            <TableColumn fx:id="tableColumnREMOVE" prefWidth="120.0" />
+            </columns>
+        </TableView>
+      <AnchorPane prefHeight="121.0" prefWidth="414.0">
+         <children>
+                <Button fx:id="btNew" layoutX="252.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBtNewAction" text=" New Department">
                <font>
                   <Font size="14.0" />
                </font>
                <opaqueInsets>
                   <Insets />
-               </opaqueInsets></Button>
-            </items>
-        </ToolBar>
-        <TableView fx:id="tableViewDepartment" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;">
-            <columns>
-                <TableColumn fx:id="tableColumnId" prefWidth="90.0" text="Id" />
-                <TableColumn fx:id="tableColumnName" minWidth="0.0" prefWidth="116.0" text="Name" />
-            <TableColumn fx:id="tableColumnEDIT" prefWidth="232.0" />
-            </columns>
-        </TableView>
+               </opaqueInsets>
+            </Button>
+         </children>
+      </AnchorPane>
     </children>
 </VBox>
