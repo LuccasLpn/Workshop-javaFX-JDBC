@@ -101,6 +101,7 @@ public class DepartmentListController implements Initializable{
             Pane pane = loader.load();
             DepartmentFormController controller = loader.getController();
             controller.setDepartment(obj);
+            controller.SetDepartmentService(new DepartmenteService());
             controller.updateFormData();
             
             Stage dialogStage = new Stage();
