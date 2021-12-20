@@ -22,8 +22,10 @@ public class ViewController implements Initializable {
 
     @FXML
     private MenuItem menuitemSeller;
+    
     @FXML
     private MenuItem menuitemDepartment;
+    
     @FXML
     private MenuItem menuitemAbout;
     
