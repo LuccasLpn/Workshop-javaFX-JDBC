@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="339.0" prefWidth="444.0" styleClass="bodybg" stylesheets="@../Background/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerListController">
+<VBox prefHeight="431.0" prefWidth="587.0" styleClass="bodybg" stylesheets="@../Background/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerListController">
     <children>
         <AnchorPane prefHeight="31.0" prefWidth="302.0">
             <children>
@@ -29,13 +29,16 @@
         <VBox styleClass="bodybg" stylesheets="@../Background/style.css" VBox.vgrow="NEVER" />
         <TableView fx:id="tableViewSeller" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;">
             <columns>
-                <TableColumn fx:id="tableColumnId" prefWidth="90.0" text="Id" />
-                <TableColumn fx:id="tableColumnName" minWidth="0.0" prefWidth="116.0" text="Name" />
-                <TableColumn fx:id="tableColumnEDIT" prefWidth="117.0" />
-                <TableColumn fx:id="tableColumnREMOVE" prefWidth="120.0" />
+                <TableColumn fx:id="tableColumnId" prefWidth="62.0" text="Id" />
+                <TableColumn fx:id="tableColumnName" minWidth="0.0" prefWidth="124.0" text="Name" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="tableColumnBirthDate" prefWidth="75.0" text="BirthDate" />
+            <TableColumn fx:id="tableColumnBaseSalry" prefWidth="75.0" text="BaseSalary" />
+                <TableColumn fx:id="tableColumnEDIT" prefWidth="86.0" text="Update" />
+                <TableColumn fx:id="tableColumnREMOVE" prefWidth="86.0" text="Delete" />
             </columns>
         </TableView>
-        <AnchorPane prefHeight="121.0" prefWidth="414.0">
+        <AnchorPane prefHeight="154.0" prefWidth="488.0">
             <children>
                 <Button fx:id="btNew" layoutX="252.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBtNewAction" text=" New Seller">
                     <font>
