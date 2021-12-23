@@ -30,5 +30,6 @@ build/
 nbbuild/
 dist/
 nbdist/
+*.java linguist-detectable=true
 
 
